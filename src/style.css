@@ -1,0 +1,14 @@
+@font-face{
+    font-family: 'kfc';
+    src: url('./fritz-medium.otf')
+}
+*{
+    font-family: 'kfc';
+}
+body{
+    font-size: larger;
+}
+nav{
+    gap: 10 px;
+    display: flex;
+}
