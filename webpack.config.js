@@ -8,6 +8,7 @@ module.exports = {
         home: './src/home.js',
         menu: './src/menu.js',
         contacts: './src/contact.js',
+        header: './src/header.js',
     },
     output: {
         filename: '[name].bundle.js',

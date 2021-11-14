@@ -5,34 +5,52 @@
 *{
     font-family: 'kfc';
     color: white;
+    margin: 0;
+    padding: 0;
 }
 header{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.431);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.808);
 }
 nav{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 40px;
 }
 .nav{
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 80%;
     cursor: pointer;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.nav:hover{
+    background-color: rgba(255, 255, 255, 0.452);
+}
+.profile{
+    margin-right: auto;
+}
+.profile-img{
+    border-radius: 50%;
+    height: 50px;
+    padding: 10px;
+}
+.logo-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 body{
     font-size: larger;
     margin: 0;
-}
-#page{
-    height: 500px;
 }
 .parallax {
     perspective: 1px;
@@ -46,23 +64,55 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 100vh;
+    padding: 100vh 0;
 }
 .parallax__layer--base {
-    transform: translateZ(0);    
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);    
 }
 .parallax__layer--back {
-    transform: translateZ(-1px) scale(2);
+    transform: translateZ(-10px) scale(11);
+    -webkit-transform: translateZ(-1px) scale(2);
     background-image: url('./background.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.418);
-    filter: blur(1px);
+      
 }
-.title {
+.parallax__group{
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+.title{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    filter: blur(1px);
+}
+.section1{
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    height: 50vh;
+    width: 90vw;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(194, 194, 194, 0.829);
+}
+.section2{
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    height: 50vh;
+    width: 90vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(194, 194, 194, 0.829);
 }
