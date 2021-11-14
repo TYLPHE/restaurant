@@ -4,11 +4,65 @@
 }
 *{
     font-family: 'kfc';
+    color: white;
+}
+header{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.431);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 40px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 80%;
+    cursor: pointer;
 }
 body{
     font-size: larger;
+    margin: 0;
 }
-nav{
-    gap: 10 px;
-    display: flex;
+#page{
+    height: 500px;
+}
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 100vh;
+}
+.parallax__layer--base {
+    transform: translateZ(0);    
+}
+.parallax__layer--back {
+    transform: translateZ(-1px) scale(2);
+    background-image: url('./background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.418);
+    filter: blur(1px);
+}
+.title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
