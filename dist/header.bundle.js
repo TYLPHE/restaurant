@@ -10,6 +10,26 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet component = {\n    contact: function(){\n        let element = document.createElement(`div`);\n        element.id = `page`;\n        let title = document.createElement(`div`);\n        title.textContent = `Contacts`;\n        let about = document.createElement(`div`);\n        about.textContent = `Contacts section`;\n        element.append(title, about);\n        return element;\n    },\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.contact());\n\n//# sourceURL=webpack://restaurant/./src/contact.js?");
+
+/***/ }),
+
+/***/ "./src/header.js":
+/*!***********************!*\
+  !*** ./src/header.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/contact.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n\n\n\nlet component = {\n    clear: function(){\n        while(document.body.firstChild){\n            document.body.removeChild(document.body.lastChild);\n        }\n    },\n    header: function(){\n        let header = document.createElement(`div`);\n        header.classList = `header`;\n        let nav = document.createElement(`nav`);\n        let home = document.createElement(`div`);\n        home.classList = `nav`;\n        home.textContent = `Home`;\n        home.addEventListener(`click`, () => {\n            this.clear();\n            document.body.append(this.header(), _home_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].home());\n            _home_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].scrollCreate();\n        });\n\n        let menu = document.createElement(`div`);\n        menu.textContent = `Menu`;\n        menu.classList = `nav`\n        menu.addEventListener(`click`, () => _menu_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].menu());\n\n        let contact = document.createElement(`div`);\n        contact.textContent = `Contact`;\n        contact.classList = `nav`\n        contact.addEventListener(`click`, () => _contact_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].contact());\n\n        let logoContainer = document.createElement(`div`);\n        logoContainer.classList = `logo-container`;\n        let logo = document.createElement(`a`);\n        logo.classList = `profile`;\n        logo.href = `https://github.com/TYLPHE`;\n        let img = document.createElement(`img`);\n        img.src = `https://avatars.githubusercontent.com/u/85977718?v=4`;\n        img.alt = `TYLPHE's Avatar`;\n        img.classList = `profile-img`;\n        logo.appendChild(img);\n\n        let title = document.createElement(`div`);\n        title.textContent = `TYLPHE's Steakhouse`;\n\n        logoContainer.append(logo, title)\n        nav.append(home, menu, contact);\n        header.append(logoContainer, nav);\n        return header;\n    },\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.header());\n\n//# sourceURL=webpack://restaurant/./src/header.js?");
+
+/***/ }),
+
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
@@ -17,6 +37,16 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _background_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./background.jpg */ \"./src/background.jpg\");\n\nlet component = {\n    home: function(){\n        let element = document.createElement(`div`);\n        element.classList = `parallax`;\n\n        let group1 = document.createElement(`div`);\n        group1.classList = `parallax__group`;\n        let group2 = document.createElement(`div`);\n        group2.classList = `parallax__group`;\n\n        let title1 = document.createElement(`img`);\n        title1.classList = `parallax__layer parallax__layer--back background`;\n        title1.src = _background_jpg__WEBPACK_IMPORTED_MODULE_0__;\n        title1.alt = `Image of steak.`;\n\n        let section1 = document.createElement(`div`);\n        section1.classList = `parallax__layer parallax__layer--base`;\n        let section1Content = document.createElement(`div`);\n        section1Content.classList = `section1`;\n        section1Content.textContent = `MEAT.`;\n        section1.appendChild(section1Content);\n\n        let title2 = document.createElement(`div`);\n        title2.classList = `parallax__layer parallax__layer--back`;\n        let title2Content = document.createElement(`div`);\n        title2Content.classList = `title`;\n        title2Content.textContent = `Restaurant by TYLPHE`;\n        title2.appendChild(title2Content);\n\n        let section2 = document.createElement(`div`);\n        section2.classList = `parallax__layer parallax__layer--base`;\n        let section2Content = document.createElement(`div`);\n        section2Content.classList = `section2`;\n        section2Content.textContent = `section2 section`;\n        section2.appendChild(section2Content);\n\n        group1.append(title1, section1, section2);\n        element.append(group1);\n        return element;\n    },\n    scrollCreate: function (){\n        document.querySelector(`.parallax`).onscroll = () => {\n            if(document.querySelector(`.parallax`).scrollTop > 1){\n                document.querySelector(`.section1`).classList.add(`show`);\n                // document.querySelector(`.section1`).scrollIntoView();\n                console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);\n            }\n            else if (document.querySelector(`.parallax`).scrollTop<  10){\n                document.querySelector(`.section1`).classList.remove(`show`);            }\n        }\n    }\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component);\n\n//# sourceURL=webpack://restaurant/./src/home.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet component = {\n    menu: function(){\n        let element = document.createElement(`div`);\n        element.id = `page`;\n        let title = document.createElement(`div`);\n        title.textContent = `Menu`;\n        let about = document.createElement(`div`);\n        about.textContent = `Menu section`;\n        element.append(title, about);\n        return element;\n    },\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.menu());\n\n//# sourceURL=webpack://restaurant/./src/menu.js?");
 
 /***/ }),
 
@@ -122,7 +152,7 @@ eval("module.exports = __webpack_require__.p + \"c1c548026a763ba0ef08.jpg\";\n\n
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/home.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/header.js");
 /******/ 	
 /******/ })()
 ;

@@ -7,11 +7,12 @@
     color: white;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
-header{
+.header{
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.808);
+    background-color: rgb(31, 31, 31);
 }
 nav{
     display: flex;
@@ -51,6 +52,7 @@ nav{
 body{
     font-size: larger;
     margin: 0;
+    height: 100%;
 }
 .parallax {
     perspective: 1px;
@@ -64,26 +66,24 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 100vh 0;
 }
 .parallax__layer--base {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);    
 }
 .parallax__layer--back {
-    transform: translateZ(-10px) scale(11);
-    -webkit-transform: translateZ(-1px) scale(2);
-    background-image: url('./background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
-    background-color: rgba(0, 0, 0, 0.418);
-      
+    transform: translateZ(-1px) scale(4);
+    -webkit-transform: translateZ(-1px) scale(4);      
 }
 .parallax__group{
     position: relative;
     height: 100vh;
     transform-style: preserve-3d;
+}
+.background{
+    /* top: 900px; */
+    width: 100vw;
+    filter: brightness(.7);
 }
 .title{
     position: absolute;
@@ -93,26 +93,32 @@ body{
     filter: blur(1px);
 }
 .section1{
+    opacity: 0;
+    transition: opacity .8s;
     text-align: center;
-    color: black;
+    font-size: 100px;
     border-radius: 10px;
-    height: 50vh;
+    height: 90vh;
     width: 90vw;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 120%;
     transform: translate(-50%, -50%);
-    background-color: rgba(194, 194, 194, 0.829);
+    background-color: rgba(194, 194, 194, 0);
+}
+.section1.show{
+    opacity: 1;
+    transition: opacity .8s;
 }
 .section2{
     text-align: center;
     color: black;
     border-radius: 10px;
-    height: 50vh;
+    height: 90vh;
     width: 90vw;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 220%;
     transform: translate(-50%, -50%);
     background-color: rgba(194, 194, 194, 0.829);
 }

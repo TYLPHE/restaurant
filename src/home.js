@@ -1,4 +1,4 @@
-import header from './header.js';
+import background from './background.jpg';
 let component = {
     home: function(){
         let element = document.createElement(`div`);
@@ -9,18 +9,16 @@ let component = {
         let group2 = document.createElement(`div`);
         group2.classList = `parallax__group`;
 
-        let title1 = document.createElement(`div`);
-        title1.classList = `parallax__layer parallax__layer--back`;
-        let title1Content = document.createElement(`div`);
-        title1Content.classList = `title`;
-        title1Content.textContent = `Restaurant by TYLPHE`;
-        title1.appendChild(title1Content);
+        let title1 = document.createElement(`img`);
+        title1.classList = `parallax__layer parallax__layer--back background`;
+        title1.src = background;
+        title1.alt = `Image of steak.`;
 
         let section1 = document.createElement(`div`);
         section1.classList = `parallax__layer parallax__layer--base`;
         let section1Content = document.createElement(`div`);
         section1Content.classList = `section1`;
-        section1Content.textContent = `section1 section`;
+        section1Content.textContent = `MEAT.`;
         section1.appendChild(section1Content);
 
         let title2 = document.createElement(`div`);
@@ -38,8 +36,19 @@ let component = {
         section2.appendChild(section2Content);
 
         group1.append(title1, section1, section2);
-        element.append(header, group1);
+        element.append(group1);
         return element;
     },
+    scrollCreate: function (){
+        document.querySelector(`.parallax`).onscroll = () => {
+            if(document.querySelector(`.parallax`).scrollTop > 1){
+                document.querySelector(`.section1`).classList.add(`show`);
+                // document.querySelector(`.section1`).scrollIntoView();
+                console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);
+            }
+            else if (document.querySelector(`.parallax`).scrollTop<  10){
+                document.querySelector(`.section1`).classList.remove(`show`);            }
+        }
+    }
 };
-export default component.home();
+export default component;
