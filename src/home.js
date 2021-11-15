@@ -1,53 +1,107 @@
-import background from './background.jpg';
+import background1 from './background1.jpg';
+import background2 from './background2.jpg';
 let component = {
     home: function(){
         let element = document.createElement(`div`);
         element.classList = `parallax`;
 
+        let groupTop = document.createElement(`div`);
+        groupTop.classList = `parallax_group`;
+        groupTop.id = `groupTop`;
         let group1 = document.createElement(`div`);
-        group1.classList = `parallax__group`;
+        group1.classList = `parallax_group`;
+        group1.id = `group1`;
         let group2 = document.createElement(`div`);
-        group2.classList = `parallax__group`;
+        group2.classList = `parallax_group`;
+        group2.id = `group2`;
+        let groupBot = document.createElement(`div`);
+        groupBot.classList = `parallax_group`;
+        groupBot.id = `groupBot`;
+        
+        let bg1Container = document.createElement(`div`);
+        bg1Container.classList = `parallax_layer parallax_layer-back`;
+        let bg1 = document.createElement(`img`);
+        bg1.classList = `background`;
+        // bg1.textContent = `background`;
+        bg1.src = background1;
+        bg1.alt = `Image of steak.`;
+        bg1Container.appendChild(bg1);
+        
+        let bg2Container = document.createElement(`div`);
+        bg2Container.classList = `parallax_layer parallax_layer-fore`;
+        let bg2 = document.createElement(`div`);
+        bg2.classList = `section1a`;
+        bg2.textContent = `MORE MEAT.`;
+        // bg2.src = background2;
+        // bg2.alt = `Image of steak.`;
+        bg2Container.appendChild(bg2);
 
-        let title1 = document.createElement(`img`);
-        title1.classList = `parallax__layer parallax__layer--back background`;
-        title1.src = background;
-        title1.alt = `Image of steak.`;
+        let sectionCapa = document.createElement(`div`);
+        sectionCapa.classList = `parallax_layer parallax_layer-base`;
+        let sectionCapaContent = document.createElement(`div`);
+        sectionCapaContent.classList = `section1a`;
+        sectionCapaContent.textContent = `Title.`;
+        sectionCapa.appendChild(sectionCapaContent);
 
-        let section1 = document.createElement(`div`);
-        section1.classList = `parallax__layer parallax__layer--base`;
-        let section1Content = document.createElement(`div`);
-        section1Content.classList = `section1`;
-        section1Content.textContent = `MEAT.`;
-        section1.appendChild(section1Content);
+        let section1a = document.createElement(`div`);
+        section1a.classList = `parallax_layer parallax_layer-base`;
+        let section1aContent = document.createElement(`div`);
+        section1aContent.classList = `section1a`;
+        section1aContent.textContent = `MEAT.`;
+        section1a.appendChild(section1aContent);
 
-        let title2 = document.createElement(`div`);
-        title2.classList = `parallax__layer parallax__layer--back`;
-        let title2Content = document.createElement(`div`);
-        title2Content.classList = `title`;
-        title2Content.textContent = `Restaurant by TYLPHE`;
-        title2.appendChild(title2Content);
+        let section1b = document.createElement(`div`);
+        section1b.classList = `parallax_layer parallax_layer-base`;
+        let section1bContent = document.createElement(`div`);
+        section1bContent.classList = `section1b`;
+        section1bContent.textContent = `section1b section`;
+        section1b.appendChild(section1bContent);
 
-        let section2 = document.createElement(`div`);
-        section2.classList = `parallax__layer parallax__layer--base`;
-        let section2Content = document.createElement(`div`);
-        section2Content.classList = `section2`;
-        section2Content.textContent = `section2 section`;
-        section2.appendChild(section2Content);
+        // let section2a = document.createElement(`div`);
+        // section2a.classList = `parallax_layer parallax_layer-base`;
+        // let section2aContent = document.createElement(`div`);
+        // section2aContent.classList = `section2a`;
+        // section2aContent.textContent = `MORE MEAT.`;
+        // section2a.appendChild(section2aContent);
+        let section2a = document.createElement(`div`);
+        section2a.classList = `parallax_layer parallax_layer-base`;
+        let section2aContent = document.createElement(`img`);
+        section2aContent.src = background2;
+        section2aContent.alt = `Image of steak.`;
+        // section2aContent.classList = `section2a`;
+        // section2aContent.textContent = `MORE MEAT.`;
+        section2a.appendChild(section2aContent);
 
-        group1.append(title1, section1, section2);
-        element.append(group1);
+        let section2b = document.createElement(`div`);
+        section2b.classList = `parallax_layer parallax_layer-base`;
+        let section2bContent = document.createElement(`div`);
+        section2bContent.classList = `section2b`;
+        section2bContent.textContent = `section2b section`;
+        section2b.appendChild(section2bContent);
+
+        let sectionBota = document.createElement(`div`);
+        sectionBota.classList = `parallax_layer parallax_layer-base`;
+        let sectionBotaContent = document.createElement(`div`);
+        sectionBotaContent.classList = `section1a`;
+        sectionBotaContent.textContent = `Title.`;
+        sectionBota.appendChild(sectionBotaContent);
+
+        groupTop.append(sectionCapa);
+        group1.append(section1a, bg1Container);
+        group2.append(section2a, bg2Container);
+        groupBot.append(sectionBota);
+        element.append(groupTop, group1, group2, groupBot);
         return element;
     },
     scrollCreate: function (){
         document.querySelector(`.parallax`).onscroll = () => {
             if(document.querySelector(`.parallax`).scrollTop > 1){
-                document.querySelector(`.section1`).classList.add(`show`);
+                document.querySelector(`.section1a`).classList.add(`show`);
                 // document.querySelector(`.section1`).scrollIntoView();
-                console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);
+                // console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);
             }
             else if (document.querySelector(`.parallax`).scrollTop<  10){
-                document.querySelector(`.section1`).classList.remove(`show`);            }
+                document.querySelector(`.section1a`).classList.remove(`show`);            }
         }
     }
 };

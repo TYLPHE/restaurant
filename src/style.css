@@ -1,10 +1,10 @@
 @font-face{
     font-family: 'kfc';
-    src: url('./fritz-medium.otf')
+    src: url('./fritz-medium.otf') format('opentype');
 }
 *{
-    font-family: 'kfc';
-    color: white;
+    /* font-family: 'kfc'; */
+    color: black;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -12,7 +12,8 @@
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(133, 133, 133);
+    height: 6vh;
 }
 nav{
     display: flex;
@@ -21,7 +22,7 @@ nav{
     gap: 50px;
 }
 .nav{
-    padding: 0 20px;
+    padding: 0 3vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,7 +41,7 @@ nav{
 }
 .profile-img{
     border-radius: 50%;
-    height: 50px;
+    height: 30px;
     padding: 10px;
 }
 .logo-container{
@@ -50,67 +51,99 @@ nav{
     gap: 10px;
 }
 body{
-    font-size: larger;
+    display: block;
+    font-size: 2em;
     margin: 0;
     height: 100%;
 }
-.parallax {
-    perspective: 1px;
-    height: 100vh;
+/* .parallax is the window that the user looks into. */
+/* .parallax_group place base and back into these to create multiple parallax secitons */
+/* .parallax_layer fixes window to all edges of screen. */
+/* .parallax_layer-base places window closer on the z axis. */
+/* .parallax_layer-back places window behind and scrolls slower. scale is -x+1 to be same size as the translateZ*/
+.parallax{
+    perspective: 300px;
+    height: 94vh; /*94vh compensates for header (6vh) size. Else, 2 scrollbars.*/
     overflow-x: hidden;
     overflow-y: auto;
   }
-.parallax__layer {
+.parallax_group{
+    position: relative;
+    height: 94vh;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.parallax_layer {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.parallax__layer--base {
+.parallax_layer-base {
     transform: translateZ(0);
-    -webkit-transform: translateZ(0);    
+    -webkit-transform: translateZ(0);
+    z-index: 4;
 }
-.parallax__layer--back {
-    transform: translateZ(-1px) scale(4);
-    -webkit-transform: translateZ(-1px) scale(4);      
+.parallax_layer-back {
+    transform: translateZ(-300px) scale(2); 
+    -webkit-transform: translateZ(-300px) scale(2);
+    z-index: 3;
 }
-.parallax__group{
-    position: relative;
-    height: 100vh;
-    transform-style: preserve-3d;
+.parallax_layer-fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index:1;
 }
 .background{
-    /* top: 900px; */
-    width: 100vw;
-    filter: brightness(.7);
-}
-.title{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    filter: blur(1px);
 }
-.section1{
-    opacity: 0;
+.section1a{
+    opacity: 1;
     transition: opacity .8s;
     text-align: center;
-    font-size: 100px;
-    border-radius: 10px;
-    height: 90vh;
-    width: 90vw;
+    font-size: 4em;
+    /* border-radius: 10px; */
     position: absolute;
     left: 50%;
-    top: 120%;
+    top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(194, 194, 194, 0);
 }
-.section1.show{
+.section1a.show{
     opacity: 1;
     transition: opacity .8s;
 }
-.section2{
+.section1b{
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(194, 194, 194, 0.829);
+}
+.section2a{
+    opacity: 1;
+    transition: opacity .8s;
+    text-align: center;
+    font-size: 4em;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(194, 194, 194, 0);
+}
+.section2a.show{
+    opacity: 1;
+    transition: opacity .8s;
+}
+.section2b{
     text-align: center;
     color: black;
     border-radius: 10px;
@@ -118,7 +151,33 @@ body{
     width: 90vw;
     position: absolute;
     left: 50%;
-    top: 220%;
+    top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(194, 194, 194, 0.829);
+}
+img{
+    width: 100vw;
+    height: 96vh;
+}
+#groupTop{
+    z-index: 5;
+    background-color: chocolate;
+}
+#group1{
+    z-index: 3;
+}
+#group2{
+    z-index: 4;
+}
+#groupBot{
+    z-index: 3;
+}
+#group1 .parallax_layer-back{
+    background-color: blueviolet;
+}
+#group2 .parallax_layer-base {
+    background-color: rgb(226, 43, 73);
+}
+#group2 .parallax_layer-fore{
+    /* background-color: blue; */
 }
