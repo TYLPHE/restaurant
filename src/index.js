@@ -5,7 +5,7 @@ import header from './header.js';
 let component = {
     init: function(){
         document.body.append(header, homePage.home());
-        homePage.scrollCreate();
+        // homePage.scrollCreate();
     },
 }
 component.init();

@@ -4,94 +4,118 @@ let component = {
     home: function(){
         let element = document.createElement(`div`);
         element.classList = `parallax`;
-
-        let groupTop = document.createElement(`div`);
-        groupTop.classList = `parallax_group`;
-        groupTop.id = `groupTop`;
-        let group1 = document.createElement(`div`);
-        group1.classList = `parallax_group`;
-        group1.id = `group1`;
-        let group2 = document.createElement(`div`);
-        group2.classList = `parallax_group`;
-        group2.id = `group2`;
-        let groupBot = document.createElement(`div`);
-        groupBot.classList = `parallax_group`;
-        groupBot.id = `groupBot`;
-        
-        let bg1Container = document.createElement(`div`);
-        bg1Container.classList = `parallax_layer parallax_layer-back`;
-        let bg1 = document.createElement(`img`);
-        bg1.classList = `background`;
-        // bg1.textContent = `background`;
-        bg1.src = background1;
-        bg1.alt = `Image of steak.`;
-        bg1Container.appendChild(bg1);
-        
-        let bg2Container = document.createElement(`div`);
-        bg2Container.classList = `parallax_layer parallax_layer-fore`;
-        let bg2 = document.createElement(`div`);
-        bg2.classList = `section1a`;
-        bg2.textContent = `MORE MEAT.`;
-        // bg2.src = background2;
-        // bg2.alt = `Image of steak.`;
-        bg2Container.appendChild(bg2);
-
-        let sectionCapa = document.createElement(`div`);
-        sectionCapa.classList = `parallax_layer parallax_layer-base`;
-        let sectionCapaContent = document.createElement(`div`);
-        sectionCapaContent.classList = `section1a`;
-        sectionCapaContent.textContent = `Title.`;
-        sectionCapa.appendChild(sectionCapaContent);
-
-        let section1a = document.createElement(`div`);
-        section1a.classList = `parallax_layer parallax_layer-base`;
-        let section1aContent = document.createElement(`div`);
-        section1aContent.classList = `section1a`;
-        section1aContent.textContent = `MEAT.`;
-        section1a.appendChild(section1aContent);
-
-        let section1b = document.createElement(`div`);
-        section1b.classList = `parallax_layer parallax_layer-base`;
-        let section1bContent = document.createElement(`div`);
-        section1bContent.classList = `section1b`;
-        section1bContent.textContent = `section1b section`;
-        section1b.appendChild(section1bContent);
-
-        // let section2a = document.createElement(`div`);
-        // section2a.classList = `parallax_layer parallax_layer-base`;
-        // let section2aContent = document.createElement(`div`);
-        // section2aContent.classList = `section2a`;
-        // section2aContent.textContent = `MORE MEAT.`;
-        // section2a.appendChild(section2aContent);
-        let section2a = document.createElement(`div`);
-        section2a.classList = `parallax_layer parallax_layer-base`;
-        let section2aContent = document.createElement(`img`);
-        section2aContent.src = background2;
-        section2aContent.alt = `Image of steak.`;
-        // section2aContent.classList = `section2a`;
-        // section2aContent.textContent = `MORE MEAT.`;
-        section2a.appendChild(section2aContent);
-
-        let section2b = document.createElement(`div`);
-        section2b.classList = `parallax_layer parallax_layer-base`;
-        let section2bContent = document.createElement(`div`);
-        section2bContent.classList = `section2b`;
-        section2bContent.textContent = `section2b section`;
-        section2b.appendChild(section2bContent);
-
-        let sectionBota = document.createElement(`div`);
-        sectionBota.classList = `parallax_layer parallax_layer-base`;
-        let sectionBotaContent = document.createElement(`div`);
-        sectionBotaContent.classList = `section1a`;
-        sectionBotaContent.textContent = `Title.`;
-        sectionBota.appendChild(sectionBotaContent);
-
-        groupTop.append(sectionCapa);
-        group1.append(section1a, bg1Container);
-        group2.append(section2a, bg2Container);
-        groupBot.append(sectionBota);
-        element.append(groupTop, group1, group2, groupBot);
+        element.append(
+            this.groupTop(), 
+            this.group1(), 
+            this.group2(), 
+            this.groupBot());
         return element;
+    },
+    groupTop: function(){
+        //create a container to export
+        let group = document.createElement(`div`);
+        group.classList = `parallax_group`;
+        group.id = `groupTop`;
+
+        //create contents to display - top and bot dont need fore/back layer
+        let base = document.createElement(`div`);
+        base.classList = `parallax_layer parallax_layer-base`;
+        let content = document.createElement(`div`);
+        content.classList = `parallax-text`;
+        content.textContent = `Title.`;
+
+        let logoContainer = document.createElement(`div`);
+        logoContainer.classList = `logo-container`;
+        let logo = document.createElement(`a`);
+        logo.href = `https://github.com/TYLPHE`;
+        let img = document.createElement(`img`);
+        img.src = `https://avatars.githubusercontent.com/u/85977718?v=4`;
+        img.alt = `TYLPHE's Avatar`;
+        img.classList = `profile-img`;
+
+        let title = document.createElement(`div`);
+        title.classList = `logo-text`;
+        title.textContent = `TYLPHE's Restaurant`;
+        
+        let scrollText = document.createElement(`div`);
+        scrollText.classList = `scroll-text`;
+        scrollText.textContent = `(Scroll for meat.)`;
+        
+        //attach contents and export
+        logo.appendChild(img);
+        logoContainer.append(logo, title)
+        base.append(logoContainer, scrollText);
+        group.append(base);
+        return group;
+    },
+    group1: function(){
+        //create a container to export
+        let group = document.createElement(`div`);
+        group.classList = `parallax_group`;
+        group.id = `group1`;
+
+        //create contents to display - group 1 is base and back (background)
+        let base = document.createElement(`div`);
+        base.classList = `parallax_layer parallax_layer-base`;
+        let text = document.createElement(`div`);
+        text.classList = `parallax-text`;
+        text.textContent = `MEAT.`;
+        
+        let back = document.createElement(`div`);
+        back.classList = `parallax_layer parallax_layer-back`;
+        let img = document.createElement(`img`);
+        img.classList = `background`;
+        img.src = background1;
+        img.alt = `Image of steak.`;
+        
+        //attach contents and export
+        base.appendChild(text);
+        back.appendChild(img);
+        group.append(base, back);
+        return group;
+    },
+    group2: function(){
+        //create a container to export
+        let group = document.createElement(`div`);
+        group.classList = `parallax_group`;
+        group.id = `group2`;
+
+        //create contents to display - group 2 is base (background) and fore
+        let base = document.createElement(`div`);
+        base.classList = `parallax_layer parallax_layer-base`;
+        let back = document.createElement(`img`);
+        back.classList = `background`;
+        back.src = background2;
+        back.alt = `Image of ribs.`;
+        
+        let fore = document.createElement(`div`);
+        fore.classList = `parallax_layer parallax_layer-fore`;
+        let text = document.createElement(`div`);
+        text.classList = `parallax-text`;
+        text.textContent = `MORE MEAT.`;
+        
+        //attach contents and export
+        base.appendChild(back);
+        fore.appendChild(text);
+        group.append(base, fore);
+        return group;
+    },
+    groupBot: function(){
+        //create container to export
+        let group = document.createElement(`div`);
+        group.classList = `parallax_group`;
+        group.id = `groupBot`;
+
+        //create contents to display - top and bot dont need fore/back layer
+        let base = document.createElement(`div`);
+        base.classList = `parallax_layer parallax_layer-base`;
+        let content = document.createElement(`div`);
+        content.classList = `parallax-text`;
+        content.textContent = `ALL YOU CAN EAT MEAT.`;
+
+        base.appendChild(content);
+        group.append(base);
+        return group;
     },
     scrollCreate: function (){
         document.querySelector(`.parallax`).onscroll = () => {
@@ -100,7 +124,7 @@ let component = {
                 // document.querySelector(`.section1`).scrollIntoView();
                 // console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);
             }
-            else if (document.querySelector(`.parallax`).scrollTop<  10){
+            else if (document.querySelector(`.parallax`).scrollTop <  10){
                 document.querySelector(`.section1a`).classList.remove(`show`);            }
         }
     }

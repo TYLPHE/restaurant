@@ -3,16 +3,16 @@
     src: url('./fritz-medium.otf') format('opentype');
 }
 *{
-    /* font-family: 'kfc'; */
-    color: black;
+    font-family: 'kfc';
+    color: white;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
 .header{
     display: flex;
-    justify-content: space-between;
-    background-color: rgb(133, 133, 133);
+    justify-content: center;
+    background-color: rgb(42, 42, 42);
     height: 6vh;
 }
 nav{
@@ -30,37 +30,65 @@ nav{
     border-radius: 10px;
     height: 100%;
     width: 100%;
-    margin: auto;
-    text-align: center;
 }
 .nav:hover{
     background-color: rgba(255, 255, 255, 0.452);
 }
-.profile{
-    margin-right: auto;
-}
 .profile-img{
     border-radius: 50%;
-    height: 30px;
-    padding: 10px;
+    height: 15vw;
 }
 .logo-container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display:flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
+.logo-text{
+    font-size: 7vw;
+}
+.scroll-text{
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+}
 body{
     display: block;
-    font-size: 2em;
+    font-size: 2vw;
     margin: 0;
     height: 100%;
+    /* max-width: 1000px; */
 }
+
+.parallax-text{
+    opacity: 1;
+    text-align: center;
+    transition: opacity .8s;
+    font-size: 4em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.parallax-text.show{
+    opacity: 1;
+    transition: opacity .8s;
+}
+
+
+/* ---- fancy parallax stuff below ---- */
 /* .parallax is the window that the user looks into. */
 /* .parallax_group place base and back into these to create multiple parallax secitons */
 /* .parallax_layer fixes window to all edges of screen. */
 /* .parallax_layer-base places window closer on the z axis. */
 /* .parallax_layer-back places window behind and scrolls slower. scale is -x+1 to be same size as the translateZ*/
+/* .parallax_layer-fore if alternating paralax windows. back/base, then base/fore, back/base, etc. */
 .parallax{
     perspective: 300px;
     height: 94vh; /*94vh compensates for header (6vh) size. Else, 2 scrollbars.*/
@@ -84,84 +112,32 @@ body{
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     z-index: 4;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
 }
 .parallax_layer-back {
     transform: translateZ(-300px) scale(2); 
     -webkit-transform: translateZ(-300px) scale(2);
     z-index: 3;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
 }
 .parallax_layer-fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
+    -webkit-transform: translateZ(150px) scale(.5);
+    transform: translateZ(150px) scale(.5);
     z-index:1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
 }
 .background{
+    max-width: 100%;
+    min-height: 100%;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.section1a{
-    opacity: 1;
-    transition: opacity .8s;
-    text-align: center;
-    font-size: 4em;
-    /* border-radius: 10px; */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(194, 194, 194, 0);
-}
-.section1a.show{
-    opacity: 1;
-    transition: opacity .8s;
-}
-.section1b{
-    text-align: center;
-    color: black;
-    border-radius: 10px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(194, 194, 194, 0.829);
-}
-.section2a{
-    opacity: 1;
-    transition: opacity .8s;
-    text-align: center;
-    font-size: 4em;
-    border-radius: 10px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(194, 194, 194, 0);
-}
-.section2a.show{
-    opacity: 1;
-    transition: opacity .8s;
-}
-.section2b{
-    text-align: center;
-    color: black;
-    border-radius: 10px;
-    height: 90vh;
-    width: 90vw;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(194, 194, 194, 0.829);
-}
-img{
-    width: 100vw;
-    height: 96vh;
+    filter: brightness(.9);
 }
 #groupTop{
     z-index: 5;
-    background-color: chocolate;
+    background-color: rgb(73, 80, 85);
 }
 #group1{
     z-index: 3;
@@ -171,13 +147,21 @@ img{
 }
 #groupBot{
     z-index: 3;
+    background-color: rgb(73, 26, 25);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+#bot-background{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translateZ(-300px) scale(2); 
+    -webkit-transform: translateZ(-300px) scale(1);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 #group1 .parallax_layer-back{
     background-color: blueviolet;
+
 }
 #group2 .parallax_layer-base {
     background-color: rgb(226, 43, 73);
-}
-#group2 .parallax_layer-fore{
-    /* background-color: blue; */
 }

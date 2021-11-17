@@ -30,23 +30,8 @@ let component = {
         contact.classList = `nav`
         contact.addEventListener(`click`, () => contactPage.contact());
 
-        let logoContainer = document.createElement(`div`);
-        logoContainer.classList = `logo-container`;
-        let logo = document.createElement(`a`);
-        logo.classList = `profile`;
-        logo.href = `https://github.com/TYLPHE`;
-        let img = document.createElement(`img`);
-        img.src = `https://avatars.githubusercontent.com/u/85977718?v=4`;
-        img.alt = `TYLPHE's Avatar`;
-        img.classList = `profile-img`;
-        logo.appendChild(img);
-
-        let title = document.createElement(`div`);
-        title.textContent = `TYLPHE's Steakhouse`;
-
-        logoContainer.append(logo, title)
         nav.append(home, menu, contact);
-        header.append(logoContainer, nav);
+        header.append(nav);
         return header;
     },
 }
