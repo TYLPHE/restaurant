@@ -36,7 +36,6 @@
     font-weight: bold;
 }
 
-
 /* ---- fancy parallax stuff below ---- */
 /* .parallax is the window that the user looks into. */
 /* .parallax_group place base and back into these to create multiple parallax secitons */
@@ -68,7 +67,6 @@
     -webkit-transform: translateZ(0);
     z-index: 4;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
 }
 .parallax_layer-back {
     transform: translateZ(-300px) scale(2); 
@@ -81,14 +79,12 @@
     transform: translateZ(150px) scale(.5);
     z-index:1;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
 }
 .background{
     max-width: 100%;
     min-height: 100%;
     position: absolute;
     filter: brightness(.8);
-    filter: blur(1px)
 }
 #groupTop{
     z-index: 5;

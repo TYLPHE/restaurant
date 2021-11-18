@@ -1,36 +1,48 @@
 .room{
-    display: flex;
+    perspective: 300px;
+    height: 94vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.group{
+    position: relative;
+    height: 94vh;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.table{
+    text-align: center;
+    overflow: auto;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(73, 80, 85);
 }
-.table{
-    margin-top: 15px;
+.foods{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 .title{
     font-size: 4vw;
     font-weight: bold;
     padding: 20px 0 0 0;
+    text-shadow: 3px 3px 6px black;
 }
 .bowl{
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(26, 26, 26);
+    box-shadow: 3px 3px 6px black;
     background-color: rgb(219, 219, 219);
     color: rgb(26, 26, 26);
     width: 25vw;
-    height: 25vw;
+    height: 20vw;
     gap: 1vw;
-    padding: 1vw;
-    justify-content: center;
+    padding: 3vw 1vw 1vw 1vw;
     align-items: center;
-    border-radius: 5%;
+    border-radius: 5px;
 }
 .food-name{
     font-size: 2vw;
@@ -42,4 +54,49 @@
     font-size: 1.5vw;
     text-align: justify;
     margin: 0 1.5vw;
+}
+.p-layer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.p-base{
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    z-index: 4;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.p-back{
+    transform: translateZ(-300px) scale(2); 
+    -webkit-transform: translateZ(-300px) scale(2);
+    z-index: 3;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.p-fore{
+    -webkit-transform: translateZ(150px) scale(.5);
+    transform: translateZ(150px) scale(.5);
+    z-index:1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.group1{
+    z-index: 5;
+    background-image: url('./background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+.group2{
+    z-index: 4;
+}
+.group3{
+    z-index: 5;
+}
+.group5{
+    z-index: 5;
+    background-image: url('./background7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
