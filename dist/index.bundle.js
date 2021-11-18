@@ -196,7 +196,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\n\n\n\n\nlet component = {\n    init: function(){\n        // document.body.append(header.header(), homePage.home());\n        document.body.append(_header_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].header(), _menu_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].menu());\n    },\n}\ncomponent.init();\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.js */ \"./src/menu.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\n\n\n\n\nlet component = {\n    init: function(){\n        document.body.append(_header_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].header(), _home_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].home());\n        // document.body.append(header.header(), menuPage.menu());\n    },\n}\ncomponent.init();\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
 
 /***/ }),
 
