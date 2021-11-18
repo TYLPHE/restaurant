@@ -10,4 +10,4 @@ let component = {
         return element;
     },
 };
-export default component.contact();
+export default component;

@@ -16,7 +16,7 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet component = {\n    contact: function(){\n        let element = document.createElement(`div`);\n        element.id = `page`;\n        let title = document.createElement(`div`);\n        title.textContent = `Contacts`;\n        let about = document.createElement(`div`);\n        about.textContent = `Contacts section`;\n        element.append(title, about);\n        return element;\n    },\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.contact());\n\n//# sourceURL=webpack://restaurant/./src/contact.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet component = {\n    contact: function(){\n        let element = document.createElement(`div`);\n        element.id = `page`;\n        let title = document.createElement(`div`);\n        title.textContent = `Contacts`;\n        let about = document.createElement(`div`);\n        about.textContent = `Contacts section`;\n        element.append(title, about);\n        return element;\n    },\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component);\n\n//# sourceURL=webpack://restaurant/./src/contact.js?");
 
 /***/ })
 

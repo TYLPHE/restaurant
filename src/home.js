@@ -1,3 +1,4 @@
+import './home.css';
 import background1 from './background1.jpg';
 import background2 from './background2.jpg';
 let component = {
@@ -35,7 +36,7 @@ let component = {
 
         let title = document.createElement(`div`);
         title.classList = `logo-text`;
-        title.textContent = `TYLPHE's Restaurant`;
+        title.textContent = `TYLPHE'S GRILL`;
         
         let scrollText = document.createElement(`div`);
         scrollText.classList = `scroll-text`;
@@ -111,22 +112,11 @@ let component = {
         base.classList = `parallax_layer parallax_layer-base`;
         let content = document.createElement(`div`);
         content.classList = `parallax-text`;
-        content.textContent = `ALL YOU CAN EAT MEAT.`;
+        content.textContent = `ALL YOU CAN MEAT.`;
 
         base.appendChild(content);
         group.append(base);
         return group;
     },
-    scrollCreate: function (){
-        document.querySelector(`.parallax`).onscroll = () => {
-            if(document.querySelector(`.parallax`).scrollTop > 1){
-                document.querySelector(`.section1a`).classList.add(`show`);
-                // document.querySelector(`.section1`).scrollIntoView();
-                // console.log(`scrolled ${document.querySelector(`.parallax`).scrollTop}`);
-            }
-            else if (document.querySelector(`.parallax`).scrollTop <  10){
-                document.querySelector(`.section1a`).classList.remove(`show`);            }
-        }
-    }
 };
 export default component;

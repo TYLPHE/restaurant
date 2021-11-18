@@ -1,0 +1,45 @@
+.room{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(73, 80, 85);
+}
+.table{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.title{
+    font-size: 4vw;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+}
+.bowl{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(26, 26, 26);
+    background-color: rgb(219, 219, 219);
+    color: rgb(26, 26, 26);
+    width: 25vw;
+    height: 25vw;
+    gap: 1vw;
+    padding: 1vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+.food-name{
+    font-size: 2vw;
+    color: rgb(226, 43, 73);
+    text-align: center;
+    font-weight: bold;
+}
+.food-info{
+    font-size: 1.5vw;
+    text-align: justify;
+    margin: 0 1.5vw;
+}
