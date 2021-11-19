@@ -30,7 +30,7 @@ let component = {
         });
 
         let contact = document.createElement(`div`);
-        contact.textContent = `Contact`;
+        contact.textContent = `About Project`;
         contact.classList = `nav`
         contact.addEventListener(`click`, () => {
             this.clear();

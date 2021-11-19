@@ -81,10 +81,8 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .background{
-    max-width: 100%;
+    width: 100%;
     min-height: 100%;
-    position: absolute;
-    filter: brightness(.8);
 }
 #groupTop{
     z-index: 5;

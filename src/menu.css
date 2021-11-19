@@ -55,6 +55,10 @@
     text-align: justify;
     margin: 0 1.5vw;
 }
+.background{
+    width: 100%;
+    min-height: 100%;
+}
 .p-layer{
     position: absolute;
     top: 0;
