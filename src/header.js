@@ -18,7 +18,7 @@ let component = {
         home.textContent = `Home`;
         home.addEventListener(`click`, () => {
             this.clear();
-            document.body.append(this.header(), homePage.home());
+            document.body.append(this.header(), homePage);
         });
 
         let menu = document.createElement(`div`);
@@ -26,15 +26,15 @@ let component = {
         menu.classList = `nav`
         menu.addEventListener(`click`, () => {
             this.clear();
-            document.body.append(this.header(), menuPage.menu());
+            document.body.append(this.header(), menuPage);
         });
 
         let contact = document.createElement(`div`);
-        contact.textContent = `About Project`;
+        contact.textContent = `About`;
         contact.classList = `nav`
         contact.addEventListener(`click`, () => {
             this.clear();
-            document.body.append(this.header(), contactPage.contact());
+            document.body.append(this.header(), contactPage);
         });
 
         nav.append(home, menu, contact);
@@ -42,4 +42,4 @@ let component = {
         return header;
     },
 }
-export default component;
+export default component.header();

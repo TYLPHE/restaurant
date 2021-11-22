@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(73, 80, 85);
+}
+.title{
+    text-align: center;
+}
+ /* unvisited link */
+ a:link {
+    color: rgb(255, 96, 96);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(200, 255, 0);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(255, 105, 180);
+  }
+  
+  /* selected link */
+  a:active {
+    color: rgb(121, 121, 255);
+  } 

@@ -119,4 +119,4 @@ let component = {
         return group;
     },
 };
-export default component;
+export default component.home();

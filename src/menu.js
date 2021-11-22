@@ -7,15 +7,12 @@ let component = {
     menu: function(){
         let element = document.createElement(`div`);
         element.className = `room`;
-
-        let title5 = this.createTitle(`seafood`);
-
-        //door variables for parallax effect
-        let door5 = document.createElement(`div`);
-        door5.className = `group`;
-        door5.append(title5, this.beef());
-
-        element.append(this.beef(), this.poultry(), this.pork(), this.lamb(), this.seafood());
+        element.append(
+            this.beef(), 
+            this.poultry(), 
+            this.pork(), 
+            this.lamb(), 
+            this.seafood());
         return element;
     },
     beef: function(){
@@ -45,7 +42,7 @@ let component = {
         );
 
         let foods = document.createElement(`div`);
-        foods.className =  `foods`;
+        foods.className = `foods`;
 
         foods.append(food1, food2, food3, food4, food5, food6);
         base.append(title, foods);
@@ -81,7 +78,7 @@ let component = {
         img.alt = `Image of steak.`;
 
         let foods = document.createElement(`div`);
-        foods.className =  `foods`;
+        foods.className = `foods`;
 
         back.appendChild(img);
         foods.append(food1, food2, food3, food4);
@@ -114,7 +111,7 @@ let component = {
         img.alt = `Image of steak.`;
 
         let foods = document.createElement(`div`);
-        foods.className =  `foods`;
+        foods.className =`foods`;
 
         base.appendChild(img);
         foods.append(food1, food2, food3);
@@ -143,7 +140,7 @@ let component = {
         img.alt = `Image of steak.`;
 
         let foods = document.createElement(`div`);
-        foods.className =  `foods`;
+        foods.className = `foods`;
 
         back.appendChild(img);
         foods.append(food1);
@@ -163,7 +160,7 @@ let component = {
         );
 
         let foods = document.createElement(`div`);
-        foods.className =  `foods`;
+        foods.className = `foods`;
 
         foods.append(food1);
         base.append(title, foods);
@@ -189,4 +186,4 @@ let component = {
         return element;
     }
 };
-export default component;
+export default component.menu();
