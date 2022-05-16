@@ -2,8 +2,10 @@
 ###### My dream restaurant with parallax!
 ![](https://github.com/TYLPHE/TYLPHE/blob/main/readmeAssets/restaurant.gif)
 
+<<<<<<< HEAD
 ## Links
-[Try restaurant here!](https://TYLPHE.github.io/restaurant/dist/)
+[See my progress here!](https://tylphe.github.io/restaurant/)
+>>>>>>> ba3c8a0 (updates for github pages)
 
 [Link to the assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/restaurant-page)
 
